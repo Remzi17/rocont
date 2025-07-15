@@ -13,7 +13,7 @@ export let fixedHeader = true;
 export let fixedElements = document.querySelectorAll('[data-fixed]');
 export let stickyObservers = new Map();
 
-export const menuClass = '.header__mobile';
+export const menuClass = '.header-nav';
 export const menu = document.querySelector(menuClass) ? document.querySelector(menuClass) : document.querySelector('head');
 export const menuLink = document.querySelector('.menu-link') ? document.querySelector('.menu-link') : document.querySelector('head');
 export const menuActive = 'active';

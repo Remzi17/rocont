@@ -14,7 +14,7 @@
 	let fixedElements = document.querySelectorAll('[data-fixed]');
 	let stickyObservers = new Map();
 
-	const menuClass = '.header__mobile';
+	const menuClass = '.header-nav';
 	const menu = document.querySelector(menuClass) ? document.querySelector(menuClass) : document.querySelector('head');
 	const menuLink = document.querySelector('.menu-link') ? document.querySelector('.menu-link') : document.querySelector('head');
 	const menuActive = 'active';

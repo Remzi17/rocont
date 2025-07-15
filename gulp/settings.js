@@ -4,7 +4,7 @@ export let isDeploy = false;
 export let template = 'rem';
 export let concatLibs = true;
 export let isBuild = true;
-export let unCSS = true;
+export let unCSS = false;
 
 export let variables = {
 	font: 'Montserrat',

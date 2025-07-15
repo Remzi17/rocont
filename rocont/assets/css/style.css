@@ -1,3 +1,54 @@
+@keyframes fadeInTop {
+  0% {
+    translate: 0 -100%
+  }
+
+  to {
+    translate: 0 0
+  }
+}
+
+@keyframes fadeOutTop {
+  0% {
+    translate: 0 0
+  }
+
+  to {
+    translate: 0 -200%
+  }
+}
+
+@keyframes showIn {
+  0% {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes showOut {
+  0% {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0
+  }
+
+  80%,
+  to {
+    opacity: 1
+  }
+}
+
 .container {
   position: relative;
   margin-inline: auto;
@@ -120,11 +171,18 @@ body.scrollbar-auto,
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
 ul,
+ol,
 dl,
 dt,
 dd,
+figure,
 fieldset,
 iframe {
   margin: 0;
@@ -270,6 +328,10 @@ svg {
   transition: all .4s
 }
 
+sup {
+  font-size: .5em
+}
+
 [data-digits-counter] {
   display: inline-block;
   white-space: nowrap
@@ -343,6 +405,16 @@ a,
   scale: 1.02
 }
 
+.hover-icon img,
+.hover-icon svg {
+  transition: all .4s
+}
+
+.hover-icon:focus-visible img,
+.hover-icon:focus-visible svg {
+  scale: 1.08
+}
+
 .underline {
   text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
@@ -377,10 +449,15 @@ a,
   user-select: none
 }
 
+.flex {
+  display: flex
+}
+
 .flex-wrap {
   flex-wrap: wrap
 }
 
+.col,
 .grid {
   display: grid;
   grid-template-columns: 100%;
@@ -454,21 +531,20 @@ body {
 
 .button {
   display: flex;
-  align-items: center;
   gap: 16px;
   padding: 16px 24px;
+  min-height: 52px;
   border-radius: 40px;
   background: #1f8b48;
   color: #fff;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.1;
-  white-space: nowrap;
-  font-family: "Gropled";
-  font-weight: 700
+  white-space: nowrap
 }
 
-.button svg {
+.button svg,
+.button img {
   width: 48px;
   height: 20px;
   fill: currentColor;
@@ -872,6 +948,7 @@ html:not(.loaded) .swiper {
 }
 
 .callback-content {
+  padding-top: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
@@ -1276,6 +1353,10 @@ html:not(.loaded) .swiper {
     width: calc(0px + (100vw - 0px)/2)
   }
 
+  .flex {
+    gap: 16px
+  }
+
   .grid {
     gap: 16px
   }
@@ -1332,6 +1413,9 @@ html:not(.loaded) .swiper {
 }
 
 @media (max-width:1200px) {
+  .flex {
+    gap: round(clamp(12px, 11.2px + .25vw, 16px), 1px)
+  }
 
   .grid {
     gap: round(clamp(12px, 11.2px + .25vw, 16px), 1px)
@@ -1498,17 +1582,17 @@ html:not(.loaded) .swiper {
   }
 
   .header {
-    margin-bottom: 0
+    margin-bottom: 0;
+    background: #fff
   }
 
   .header-nav {
     position: fixed;
     right: -100vw;
-    top: 0;
+    top: var(--headerFixedHeight);
     z-index: 5;
     display: grid;
     grid-template-columns: 100%;
-    justify-items: start;
     align-content: start;
     gap: 20px;
     width: min(500px, 101vw);
@@ -1551,13 +1635,12 @@ html:not(.loaded) .swiper {
   .header-menu {
     display: grid;
     grid-template-columns: 100%;
-    gap: 20px;
-    width: 100%
+    justify-items: start;
+    gap: 20px
   }
 
   .header-top {
     padding-inline: 0;
-    background: 0 0;
     border-radius: 0
   }
 
@@ -1764,7 +1847,12 @@ html:not(.loaded) .swiper {
 
 @media (min-width:576px) and (max-width:1199px) {
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-wrap: balance
   }
 }
@@ -1782,12 +1870,22 @@ html:not(.loaded) .swiper {
     scale: 1.02
   }
 
+  .hover-icon:hover img,
+  .hover-icon:hover svg {
+    scale: 1.08
+  }
+
   .underline:hover {
     text-decoration-color: transparent
   }
 
   .hover-underline:hover {
     text-decoration-color: currentColor
+  }
+
+  .button {
+    font-family: "Gropled";
+    font-weight: 700
   }
 
   .button:hover {

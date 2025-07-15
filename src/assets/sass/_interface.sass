@@ -26,12 +26,11 @@ body
 	&-4
 		+title-4
 
-	
 .button 
 	display: flex
-	align-items: center
 	gap: 16px
-	padding: 16px 24px
+	padding: 16px 24px 
+	min-height: 52px
 
 	border-radius: 40px
 	background: $active
@@ -41,20 +40,22 @@ body
 	font-size: 18px
 	line-height: 1.1
 	white-space: nowrap
-	+g
+
+	@media (any-hover: hover)
+		+g
 
 	@media (max-width: 380px)
 		width: 100%
 		justify-content: space-between
 
-	svg 
+	svg, img
 		width: 48px
 		height: 20px
 
 		fill: currentColor
 		stroke: $active
-
-	+hov
+ 
+	+hov 
 		background: dark($active, 12%)
 
 	@media (max-width: 960px)
