@@ -1,0 +1,186 @@
+.callback
+	&-content
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		align-items: start
+		+adap('gap', 110, 40  , $widthTo: 960)
+		+adap('padding-right', 86, 48  , $widthTo: 960)
+		+adap('padding-left', 64, 48  , $widthTo: 960)
+		+adap('padding-block', 64, 48  , $widthTo: 960)
+		
+		background: $active
+		border-radius: 24px
+
+		color: #fff
+
+	&-left 
+		display: grid
+		gap: 24px
+
+	&-list 
+		display: grid
+		gap: 16px
+
+		font-weight: 500
+		font-size: 21px
+		line-height: 1.4
+		letter-spacing: -0.03em
+		color: #fff
+
+		li 
+			display: flex
+			gap: 8px
+			align-items: center
+
+			&:before
+				content: ''
+
+				width: 24px
+				flex: 0 0 24px
+				aspect-ratio: 1
+
+				background: url(../img/icons/arrow.svg) center / contain no-repeat
+
+
+
+	@media (max-width: 960px)
+		&-left 
+			gap: 24px
+
+		&-list
+			max-width: 250px
+			font-size: 18px
+			line-height: 1.2
+
+		&-content 
+			grid-template-columns: auto 1fr 
+			gap: 80px
+
+			padding: 48px 96px 48px 48px
+
+	@media (max-width: 767px)
+		&-content 
+			grid-template-columns: 100%
+			gap: 24px
+			padding: 24px
+
+		&-form 
+			.input-wrapper 
+				grid-template-columns: 1fr 1fr 
+
+			.checkbox, 
+			.submit 
+				grid-column: 1/-1
+
+			.submit 
+				margin-top: 16px
+
+		&-list 
+			max-width: none
+
+	@media (max-width: 380px)
+		&-form 
+			.input-wrapper 
+				grid-template-columns: 100%
+
+			.submit 
+				width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

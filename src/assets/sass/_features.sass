@@ -1,0 +1,241 @@
+.features
+	&-container 
+		position: relative
+		width: calc(100vw - ((100vw - 1160px) / 2))
+		margin-left: auto
+		padding-left: 10px
+		
+	&-content 
+		display: flex
+		gap: 8px
+
+	&-left 
+		display: grid
+		grid-template-rows: 1fr auto
+
+	&-navigation
+		display: flex
+		gap: 16px
+		align-items: center
+
+	&-arrow 
+		display: flex
+		align-items: center
+
+		background: $active
+		border-radius: 40px
+		+t 
+
+		+hov
+			scale: 1.1
+
+		img
+			width: 48px
+			height: 20px
+
+			filter: brightness(0) invert(1)
+
+		&.swiper-button-disabled
+			background: none
+
+			img
+				filter: none
+
+	&-title
+		width: 236px 
+
+	&-slider 
+		min-width: 0
+
+	&-item
+		position: relative
+		z-index: 1
+		padding: 32px
+		display: grid
+		align-content: end
+		border-radius: 24px
+		color: #fff
+		width: 300px
+
+		aspect-ratio: 300/450
+		overflow: hidden
+		cursor: pointer
+
+		&:after
+			content: ''
+
+			position: absolute
+			left: 0
+			bottom: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+
+			background: linear-gradient(180deg, rgba(31, 139, 72, 0) 0%, #1f8b48 100%)
+			pointer-events: none
+			+t
+
+		&-img 
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			z-index: -1
+
+			object-fit: cover
+
+		&-content 
+			display: grid
+			gap: 8px
+
+		&-title 
+			font-size: 24px
+			line-height: 1
+			+g
+
+		&-text 
+			line-height: 1.5
+			letter-spacing: -0.02em
+
+		@media (any-hover: hover) and (min-width: 768px)
+			&:after
+				opacity: 0
+
+			.features-item-content 
+				translate: 0 100%
+				opacity: 0
+				+t
+
+			&:hover
+				&:after
+					opacity: 1
+
+				.features-item-content 
+					translate: 0 0
+					opacity: 1
+
+	@media (max-width: 960px)
+		&-item 
+			width: 250px
+			aspect-ratio: 250/350
+
+			&-title 
+				font-size: 20px
+
+	@media (max-width: 767px)
+		&-content 
+			display: grid
+			gap: 24px
+
+		&-navigation
+			display: none
+
+		&-title 
+			width: calc(100vw - 10px)
+
+		&-item 
+			padding: 24px
+			aspect-ratio: 250/320
+
+	@media (max-width: 480px)
+		&-item 
+			aspect-ratio: 250/280
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

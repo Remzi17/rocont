@@ -1,0 +1,93 @@
+$checkbox-width: 18px
+$checkbox-height: 18px
+$checkbox-gap: 8px
+
+$checkbox-active-color: #fff
+$checkbox-bg: #fff 
+$checkbox-background-size: 55%
+
+$checkbox-border-color: dark($gray, 15%) 
+$checkbox-border-radius: 2px 
+
+.checkbox 
+	position: relative
+	display: flex
+	align-items: center 
+	gap: 8px
+
+	user-select: none
+	cursor: pointer
+
+	font-weight: 400
+	font-size: 12px
+	line-height: 1
+	letter-spacing: -0.02em
+	color: #fff
+
+	$offset: $checkbox-width * 0.4
+ 
+	&__input
+		position: relative
+		
+		display: flex
+		margin: 0
+		flex: 0 0 $checkbox-width
+		width: $checkbox-width
+		height: $checkbox-height
+
+		cursor: pointer
+
+		&:before
+			content: '' 
+
+			aspect-ratio: 1
+
+			transition: background-color .3s, border-color .3s
+			box-sizing: border-box
+
+			background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 10C19 11.78 18.4722 13.5201 17.4832 15.0001C16.4943 16.4802 15.0887 17.6337 13.4442 18.3149C11.7996 18.9961 9.99002 19.1743 8.24419 18.8271C6.49836 18.4798 4.89471 17.6226 3.63604 16.364C2.37737 15.1053 1.5202 13.5016 1.17293 11.7558C0.825665 10.01 1.0039 8.20038 1.68508 6.55585C2.36627 4.91131 3.51983 3.50571 4.99987 2.51677C6.47991 1.52784 8.21997 1 10 1' stroke='white' stroke-width='2' stroke-linecap='round' /%3E%3C/svg%3E") center / contain no-repeat
+
+		&:after
+			content: ''
+			position: absolute
+			left: 50%
+			top: 50%
+			translate: -40% -60%
+
+			width: 10px 
+			height: 10px
+
+			background: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.7236 4.97952C1.3416 4.58052 0.709602 4.56452 0.309602 4.94652C-0.0893979 5.32752 -0.105398 5.96052 0.276602 6.36052L2.4996 8.69052C2.6876 8.88752 2.9476 8.99952 3.2196 9.00052H3.2236C3.4946 9.00052 3.7536 8.89052 3.9416 8.69552L10.7186 1.69552C11.1026 1.29852 11.0926 0.665522 10.6956 0.281522C10.2976 -0.103478 9.6646 -0.091478 9.2816 0.304522L3.2286 6.55752L1.7236 4.97952Z' fill='white' /%3E%3C/svg%3E") center / contain no-repeat
+			opacity: 0
+			+t(.2)
+
+		&:checked
+			&:after
+				opacity: 1
+
+		&:disabled~span
+			opacity: .4 
+			cursor: not-allowed 
+
+		&:focus-visible
+			outline: none 
+			
+			&:before 
+				border-color: dark($checkbox-active-color, 20%)
+						
+	&-text 
+		position: relative
+
+		.checkbox
+			&__text 
+				+t 
+
+			&__input 
+				+hidden 
+
+				&:before
+					display: none
+
+				&:checked~.checkbox__text
+					color: $active
+

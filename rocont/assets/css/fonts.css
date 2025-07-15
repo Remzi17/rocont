@@ -1,0 +1,15 @@
+@font-face {
+	font-family: "TildaSans";
+	src: url(../fonts/TildaSans-VF.woff2);
+	font-weight: 400;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Gropled";
+	src: url(../fonts/Gropled-Bold.woff2);
+	font-weight: 700;
+	font-style: normal;
+	font-display: block;
+}
